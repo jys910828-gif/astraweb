@@ -461,6 +461,10 @@ section {
     url("인테리어사진/내부사진.png") center / cover;
 }
 
+.story-visual .section-title p {
+  font-size: 24px;
+}
+
 .sub-hero .section-title p {
   color: var(--gold);
 }
