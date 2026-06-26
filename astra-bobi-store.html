@@ -1,0 +1,127 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store | ASTRA</title>
+    <link rel="icon" type="image/png" href="logo-outline.png" />
+    <link rel="stylesheet" href="astra-bobi.css" />
+  </head>
+  <body>
+    <header class="bobi-header light">
+      <a class="bobi-brand" href="index.html"><img src="logo-outline.png" alt="ASTRA" /></a>
+      <nav class="bobi-nav" aria-label="주요 메뉴">
+        <a href="astra-bobi-story.html">Story</a>
+        <a href="astra-bobi-team.html">Team</a>
+        <a href="astra-bobi-menu.html">Menu</a>
+        <a aria-current="page" href="astra-bobi-store.html">Store</a>
+        <a href="astra-bobi-reservation.html">Reservation</a>
+        <a href="astra-bobi-contact.html">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section class="store-hero-detail">
+        <div>
+          <p>ASTRA GANGNAM</p>
+          <h1>Where Starlight<br />Stays in the City</h1>
+          <span>도심 한가운데, 별빛이 머무는 자리</span>
+        </div>
+      </section>
+      <section class="store-concept">
+        <div class="store-concept-copy">
+          <p>STORE ASTRA</p>
+          <h2>“URBAN STARLIGHT”</h2>
+          <span>
+            탁 트인 홀부터 아늑한 프라이빗 룸까지, 별빛처럼 머무는 공간.
+            강남의 활기와 편안한 여유가 공존하는 ASTRA에서 특별한 저녁을 만나보세요.
+          </span>
+        </div>
+        <figure><img src="인테리어사진/내부사진.png" alt="ASTRA 다이닝 홀" /></figure>
+      </section>
+      <section class="interior-section">
+        <div class="interior-heading">
+          <h2>INTERIOR</h2>
+          <p>ASTRA만의 개방적인 홀과 프라이빗 공간을 소개합니다.</p>
+        </div>
+        <div class="interior-carousel" data-interior-carousel>
+          <div class="interior-carousel-controls">
+            <p><span data-carousel-current>01</span> / <span data-carousel-total>04</span></p>
+            <div>
+              <button type="button" data-carousel-prev aria-label="이전 인테리어 사진">←</button>
+              <button type="button" data-carousel-next aria-label="다음 인테리어 사진">→</button>
+            </div>
+          </div>
+          <div class="interior-carousel-viewport" tabindex="0" aria-label="ASTRA 인테리어 사진 슬라이더">
+            <div class="interior-carousel-track">
+              <figure><img src="인테리어사진/매장홀사진.JPG" alt="ASTRA 메인홀 전경" /></figure>
+              <figure><img src="인테리어사진/내부사진.png" alt="ASTRA 내부 홀" /></figure>
+              <figure><img src="인테리어사진/메인룸.png" alt="ASTRA 메인룸" /></figure>
+              <figure><img src="인테리어사진/샹들리에.png" alt="ASTRA 조명과 인테리어" /></figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="location-section">
+        <div class="location-copy">
+          <span class="location-eyebrow">Find Us</span>
+          <h2>LOCATION</h2>
+          <p>강남역과 신논현역 사이, ASTRA로 오시는 길을 안내합니다.</p>
+          <dl>
+            <div><dt>주소</dt><dd>서울시 강남구 봉은사로6길 39 아스트라</dd></div>
+            <div><dt>전화번호</dt><dd><a href="tel:025530306">02-553-0306</a></dd></div>
+            <div><dt>운영시간</dt><dd>11:30 - 22:00 / 매주 화요일 휴무</dd></div>
+          </dl>
+        </div>
+      </section>
+    </main>
+    <script>
+      (() => {
+        const carousel = document.querySelector("[data-interior-carousel]");
+        if (!carousel) return;
+
+        const viewport = carousel.querySelector(".interior-carousel-viewport");
+        const track = carousel.querySelector(".interior-carousel-track");
+        const slides = [...track.querySelectorAll("figure")];
+        const previewClone = slides[0].cloneNode(true);
+        previewClone.classList.add("is-clone");
+        previewClone.setAttribute("aria-hidden", "true");
+        track.append(previewClone);
+        const current = carousel.querySelector("[data-carousel-current]");
+        carousel.querySelector("[data-carousel-total]").textContent = String(slides.length).padStart(2, "0");
+        let index = 0;
+        let pointerStart = 0;
+
+        const render = () => {
+          slides.forEach((slide, slideIndex) => {
+            slide.classList.toggle("is-active", slideIndex === index);
+            slide.classList.toggle("is-next", slideIndex === (index + 1) % slides.length);
+            slide.setAttribute("aria-hidden", slideIndex === index ? "false" : "true");
+          });
+          previewClone.classList.toggle("is-next", index === slides.length - 1);
+          track.style.transform = `translateX(${-slides[index].offsetLeft}px)`;
+          current.textContent = String(index + 1).padStart(2, "0");
+        };
+
+        const move = (step) => {
+          index = (index + step + slides.length) % slides.length;
+          render();
+        };
+
+        carousel.querySelector("[data-carousel-prev]").addEventListener("click", () => move(-1));
+        carousel.querySelector("[data-carousel-next]").addEventListener("click", () => move(1));
+        viewport.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowLeft") move(-1);
+          if (event.key === "ArrowRight") move(1);
+        });
+        viewport.addEventListener("pointerdown", (event) => { pointerStart = event.clientX; });
+        viewport.addEventListener("pointerup", (event) => {
+          const distance = event.clientX - pointerStart;
+          if (Math.abs(distance) > 45) move(distance > 0 ? -1 : 1);
+        });
+        window.addEventListener("resize", render);
+        render();
+      })();
+    </script>
+    <script src="astra-language.js"></script>
+  </body>
+</html>
