@@ -1417,14 +1417,14 @@ section {
 
 .menu-wall {
   display: grid;
-  gap: clamp(64px, 8vw, 110px);
-  padding: 0 clamp(24px, 6vw, 96px) clamp(84px, 10vw, 148px);
+  gap: clamp(78px, 9vw, 128px);
+  padding: 0 clamp(32px, 7vw, 116px) clamp(84px, 10vw, 148px);
   background: var(--white);
 }
 
 .menu-category-section {
   display: grid;
-  gap: clamp(28px, 4vw, 58px) clamp(18px, 2.4vw, 34px);
+  gap: clamp(44px, 5vw, 76px) clamp(28px, 3.6vw, 56px);
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
