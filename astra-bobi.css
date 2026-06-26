@@ -537,7 +537,7 @@ section {
 }
 
 .story-details article:nth-child(3)::before {
-  background-image: url("인테리어사진/매장 외관.jpg");
+  background-image: url("인테리어사진/매장 외관.JPG");
 }
 
 .story-details span {
@@ -1076,7 +1076,7 @@ section {
   color: var(--white);
   background:
     linear-gradient(90deg, rgba(31, 24, 20, 0.76), rgba(31, 24, 20, 0.12)),
-    url("인테리어사진/매장 외관.jpg") center / cover;
+    url("인테리어사진/매장 외관.JPG") center / cover;
 }
 
 .store-hero-detail > div {
