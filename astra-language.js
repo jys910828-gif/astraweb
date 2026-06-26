@@ -14,7 +14,7 @@
       [".home-keyword-space p", "간결한 선과 탁 트인 110평의 개방감이 어우러진 모던 다이닝 공간. 소중한 식사부터 최대 60명의 프라이빗 이벤트까지, 모임의 크기와 분위기에 맞는 자리를 준비합니다.", "A modern dining space where clean lines meet the openness of 110 pyeong. From intimate meals to private events for up to 60 guests, ASTRA prepares the right setting for every gathering."],
       [".home-keyword-stellar strong", "별빛 아래 완성되는 프리미엄 다이닝", "Premium Dining Completed Under Starlight"],
       [".home-keyword-stellar p", "은은한 샹들리에와 섬세한 서비스가 평범한 저녁을 특별한 장면으로 바꿉니다. 과하지 않으면서도 품격 있게 머무는 ASTRA만의 럭셔리를 경험해보세요.", "A soft chandelier glow and thoughtful service turn an ordinary evening into a memorable scene. Experience ASTRA’s understated, refined sense of luxury."],
-      [".home-keyword-fusion strong", "익숙함에 한 끗을 더한 한 접시", "A Familiar Plate with a Distinctive Touch"],
+      [".home-keyword-fusion strong", "익숙함 너머의 특별함을 담은 한 접시", "A Plate That Captures Something Special Beyond Familiarity"],
       [".home-keyword-fusion p", "이탈리안의 탄탄한 기본 위에 동양적인 풍미와 한국의 식재료를 더했습니다. 익숙하면서도 새롭고, 한 번 더 떠오르는 ASTRA만의 아시안 퓨전입니다.", "Built on Italian fundamentals and layered with Asian flavors and Korean ingredients, ASTRA’s cuisine feels familiar yet new — the kind of dish you remember."],
       [".home-closing h2", "별빛이 머무는 곳에서 특별한 한 끼를 만나보세요.", "Meet a Special Meal Where Starlight Stays."]
     ],
