@@ -458,7 +458,7 @@ section {
 .story-visual {
   background:
     linear-gradient(90deg, rgba(34, 27, 23, 0.76), rgba(34, 27, 23, 0.18)),
-    url("인테리어사진/내부사진.png") center / cover;
+    url("인테리어사진/IMG_3855.jpeg") center 48% / cover;
 }
 
 .story-visual .section-title p {
@@ -1417,10 +1417,31 @@ section {
 
 .menu-wall {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(28px, 4vw, 58px) clamp(18px, 2.4vw, 34px);
+  gap: clamp(64px, 8vw, 110px);
   padding: 0 clamp(24px, 6vw, 96px) clamp(84px, 10vw, 148px);
   background: var(--white);
+}
+
+.menu-category-section {
+  display: grid;
+  gap: clamp(28px, 4vw, 58px) clamp(18px, 2.4vw, 34px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.menu-category-section[hidden] {
+  display: none;
+}
+
+.menu-category-heading {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-bottom: 16px;
+  color: var(--orange);
+  border-bottom: 1px solid var(--line);
+  font-family: "Cormorant Garamond", "Noto Serif KR", serif;
+  font-size: clamp(30px, 3.8vw, 54px);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .menu-wall figure,
@@ -1481,7 +1502,7 @@ section {
 }
 
 @media (max-width: 1000px) {
-  .menu-wall {
+  .menu-category-section {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -1532,7 +1553,7 @@ section {
     grid-column: 1 / -1;
   }
 
-  .menu-wall {
+  .menu-category-section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1543,7 +1564,7 @@ section {
   }
 
   .interior-gallery,
-  .menu-wall {
+  .menu-category-section {
     grid-template-columns: 1fr;
   }
 
