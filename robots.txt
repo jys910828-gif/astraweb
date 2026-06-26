@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://astradining.com/sitemap.xml
