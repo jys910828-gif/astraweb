@@ -674,6 +674,7 @@ section {
 }
 
 .team-board {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 0;
   padding: 2px;
   background: var(--gold);
