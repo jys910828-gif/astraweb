@@ -4,7 +4,7 @@
 
   const pageTranslations = {
     "index.html": [
-      [".hero-panel h1", "별빛이 머무는 공간,<br />하루의 모든 순간을 특별하게", "A Space Where Starlight Stays,<br />Making Every Moment Special", true],
+      [".hero-panel h1", "<span class=\"hero-title-line\">별빛이 머무는 공간,</span><br /><span class=\"hero-title-line\">하루의 모든 순간을 특별하게</span>", "<span class=\"hero-title-line\">A Space Where Starlight Stays,</span><br /><span class=\"hero-title-line\">Making Every Moment Special</span>", true],
       [".hero-description", "감각적인 공간과 섬세한 요리가 함께하는<br />강남의 다이닝 라운지", "A dining lounge in Gangnam<br />where refined cuisine meets an elegant space", true],
       [".hero-button-primary", "예약하기", "Reservation"],
       [".hero-button-secondary", "메뉴 보기", "View Menu"],
@@ -18,7 +18,7 @@
       [".home-keyword-fusion p", "이탈리안의 탄탄한 기본 위에 동양적인 풍미와 한국의 식재료를 더했습니다. 익숙하면서도 새롭고, 한 번 더 떠오르는 ASTRA만의 아시안 퓨전입니다.", "Built on Italian fundamentals and layered with Asian flavors and Korean ingredients, ASTRA’s cuisine feels familiar yet new — the kind of dish you remember."],
       [".home-closing h2", "별빛이 머무는 곳에서 특별한 한 끼를 만나보세요.", "Meet a Special Meal Where Starlight Stays."]
     ],
-    "astra-bobi-story.html": [
+    "astra-story.html": [
       [".story-visual h1", "강남의 저녁을 별빛처럼 채우는 아시안 퓨전 다이닝", "Asian Fusion Dining That Fills Gangnam Evenings Like Starlight"],
       [".story-intro p", "복잡한 빌딩 숲 사이, 문을 열고 들어서는 순간 도심의 소란이 한 걸음 물러납니다. ASTRA는 강남역과 신논현역 사이에서 좀처럼 만나기 어려운 탁 트인 개방감과, 별빛처럼 은은하게 머무는 편안함을 함께 담은 프리미엄 다이닝 라운지입니다.", "Among the dense buildings of Gangnam, the moment you step inside, the noise of the city fades. Located between Gangnam Station and Sinnonhyeon Station, ASTRA is a premium dining lounge with rare openness and a starlight-like sense of comfort."],
       [".story-details article:nth-child(1) h2", "탁 트인 공간,<br />머물고 싶은 여유", "An Open Space,<br />A Leisurely Moment to Stay", true],
@@ -30,12 +30,12 @@
       [".story-closing p", "ASTRA는 한 끼의 식사를 넘어,<br />바쁜 하루의 끝에 조용히 빛나는 시간을 전합니다.", "Beyond a meal,<br />ASTRA offers a quietly glowing moment at the end of a busy day.", true],
       [".story-closing strong", "별빛이 머무는 자리에서, 당신의 저녁이 한층 특별해지기를.", "May your evening become more special where starlight stays."]
     ],
-    "astra-bobi-team.html": [
+    "astra-team.html": [
       [".team-intro", "ASTRA의 모든 요리는 각자의 감각과 경험을 지닌 셰프들의 손에서 완성됩니다.<br />좋은 재료에 창의적인 해석을 더해, 익숙하면서도 특별한 한 끼를 선보입니다.<br />한 접시에 담긴 우리 팀의 철학과 이야기를 만나보세요.", "Every dish at ASTRA is completed by chefs with their own senses and experience.<br />With quality ingredients and creative interpretation, we present meals that feel both familiar and special.<br />Meet our team’s philosophy and story on every plate.", true],
       [".team-board article:nth-child(1) .chef-bio", "정통 이탈리안 조리법을 바탕으로 동양적인 향과 깊은 감칠맛을 더해 ASTRA의 아시안 퓨전 스타일을 이끕니다.", "Based on classic Italian techniques, he leads ASTRA’s Asian fusion style with Eastern aromas and deep umami."],
       [".team-board article:nth-child(2) .chef-bio", "신선한 제철 재료의 식감과 선명한 플레이팅을 살려 한 접시 안의 균형과 완성도를 책임집니다.", "She brings out the texture of fresh seasonal ingredients and vivid plating, completing balance on every plate."]
     ],
-    "astra-bobi-store.html": [
+    "astra-store.html": [
       [".store-hero-detail span", "도심 한가운데, 별빛이 머무는 자리", "A place where starlight stays in the heart of the city"],
       [".store-concept-copy > span", "탁 트인 홀부터 아늑한 프라이빗 룸까지, 별빛처럼 머무는 공간. 강남의 활기와 편안한 여유가 공존하는 ASTRA에서 특별한 저녁을 만나보세요.", "From an open main hall to cozy private rooms, ASTRA is a space that lingers like starlight. Discover a special evening where Gangnam’s energy meets relaxed comfort."],
       [".interior-heading p", "ASTRA만의 개방적인 홀과 프라이빗 공간을 소개합니다.", "Explore ASTRA’s open hall and private dining spaces."],
@@ -46,7 +46,7 @@
       [".location-copy dl div:nth-child(3) dt", "운영시간", "Hours"],
       [".location-copy dl div:nth-child(3) dd", "11:30 - 22:00 / 매주 화요일 휴무", "11:30 - 22:00 / Closed every Tuesday"]
     ],
-    "astra-bobi-reservation.html": [
+    "astra-reservation.html": [
       [".reservation-title-one-line", "소중한 모임을 위한 ASTRA의 프라이빗 공간.", "ASTRA’s Private Spaces for Meaningful Gatherings."],
       [".reservation-intro-copy", "탁 트인 개방감 속, 별빛처럼 은은하게 머무는 오롯이 우리만의 시간.<br />일반 홀 테이블부터 2~4인의 아늑한 프라이빗룸, 5~10인의 넉넉한 메인룸,<br />그리고 110평 전체의 단독 대관까지 — 모임의 인원과 분위기에 맞춰 자유롭게 선택해보세요.", "A private moment that lingers softly like starlight in an open, spacious setting.<br />Choose freely according to your group and occasion — from regular hall tables to cozy private rooms for 2–4,<br />main rooms for 5–10, or exclusive rental of the entire 110-pyeong space.", true],
       [".reservation-list-heading h2", "모임에 맞는 공간을 선택하세요", "Choose the Space for Your Gathering"],
@@ -63,7 +63,7 @@
       [".reservation-event-title", "별빛이 머무는, 오직 당신의 모임만을 위한 공간", "A Starlit Space Reserved Only for Your Gathering"],
       [".reservation-event-copy", "생일 파티, 청첩장 모임, 브라이덜 샤워 같은 프라이빗 모임부터 워크숍, 세미나, 송년회 같은 기업 행사까지 —<span class=\"reservation-event-closing\">ASTRA만의 다이닝과 함께 경험해보세요. 대관 문의와 예약은 언제든 환영합니다.</span>", "From private occasions such as birthday parties, wedding invitation gatherings, and bridal showers to corporate events like workshops, seminars, and year-end parties —<span class=\"reservation-event-closing\">experience them with ASTRA’s dining. Rental inquiries and reservations are always welcome.</span>", true]
     ],
-    "astra-bobi-contact.html": [
+    "astra-contact.html": [
       [".contact-page h1", "별빛이 머무는 자리에서 만나요", "Meet Us Where Starlight Stays"],
       [".contact-page dl div:nth-child(1) dt", "주소", "Address"],
       [".contact-page dl div:nth-child(1) dd", "서울시 강남구 봉은사로6길 39 아스트라", "39, Bongeunsa-ro 6-gil, Gangnam-gu, Seoul"],
