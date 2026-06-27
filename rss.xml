@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>아스트라 다이닝 라운지</title>
+    <link>https://astradining.com/</link>
+    <description>강남에서 파스타, 피자, 스테이크를 즐길 수 있는 감각적인 다이닝 공간, 아스트라 다이닝 라운지(ASTRA DINING LOUNGE)입니다.</description>
+    <language>ko</language>
+    <lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0900</lastBuildDate>
+    <item>
+      <title>아스트라 다이닝 라운지</title>
+      <link>https://astradining.com/</link>
+      <guid>https://astradining.com/</guid>
+      <description>강남의 다이닝 라운지 아스트라에서 파스타, 피자, 스테이크와 함께 특별한 점심과 저녁을 만나보세요.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>아스트라 메뉴</title>
+      <link>https://astradining.com/astra-menu.html</link>
+      <guid>https://astradining.com/astra-menu.html</guid>
+      <description>강남에서 즐기는 파스타, 피자, 스테이크와 ASTRA의 아시안 퓨전 메뉴를 확인해보세요.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>아스트라 스토리</title>
+      <link>https://astradining.com/astra-story.html</link>
+      <guid>https://astradining.com/astra-story.html</guid>
+      <description>아스트라 다이닝 라운지가 전하는 아시안 퓨전 다이닝과 공간의 이야기를 소개합니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>아스트라 매장 안내</title>
+      <link>https://astradining.com/astra-store.html</link>
+      <guid>https://astradining.com/astra-store.html</guid>
+      <description>강남 아스트라 다이닝 라운지의 매장 공간과 프라이빗 다이닝 분위기를 소개합니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>아스트라 예약 안내</title>
+      <link>https://astradining.com/astra-reservation.html</link>
+      <guid>https://astradining.com/astra-reservation.html</guid>
+      <description>강남 아스트라 다이닝 라운지의 룸 예약과 대관 문의 안내입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
+    </item>
+  </channel>
+</rss>
