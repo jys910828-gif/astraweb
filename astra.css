@@ -2218,7 +2218,7 @@ body {
 @media (max-width: 620px) {
   .home-hero {
     min-height: 100svh;
-    padding: 92px 20px max(56px, env(safe-area-inset-bottom));
+    padding: 92px max(24px, env(safe-area-inset-left)) max(56px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-right));
     background:
       linear-gradient(180deg, rgba(19, 13, 9, 0.74) 0%, rgba(19, 13, 9, 0.4) 42%, rgba(19, 13, 9, 0.78) 100%),
       linear-gradient(90deg, rgba(31, 22, 16, 0.34), rgba(31, 22, 16, 0.08) 48%, rgba(31, 22, 16, 0.34)),
@@ -2226,6 +2226,7 @@ body {
   }
 
   .home-hero .hero-panel {
+    width: 100%;
     margin-top: 24px;
   }
 
@@ -2235,7 +2236,8 @@ body {
   }
 
   .home-hero .hero-panel h1 {
-    font-size: clamp(30px, 8.8vw, 52px);
+    max-width: 100%;
+    font-size: clamp(27px, 7.25vw, 52px);
     line-height: 1.24;
   }
 
