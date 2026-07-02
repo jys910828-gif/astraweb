@@ -69,7 +69,17 @@
       </nav>
     </header>
     <main>
-      <section class="home-hero">
+      <section class="home-hero" aria-label="ASTRA DINING LOUNGE 대표 이미지 갤러리">
+        <div class="hero-hover-gallery" aria-hidden="true">
+          <img class="is-active" src="인테리어사진/매장홀사진.JPG" alt="" />
+          <img src="인테리어사진/내부사진.png" alt="" />
+          <img src="인테리어사진/메인룸.png" alt="" />
+          <img src="인테리어사진/샹들리에.png" alt="" />
+        </div>
+        <div class="hero-hover-cursor" aria-hidden="true">
+          <span>‹</span>
+          <span>›</span>
+        </div>
         <div class="hero-panel">
           <p class="hero-brand">ASTRA DINING LOUNGE</p>
           <h1><span class="hero-title-line">별빛이 머무는 공간,</span><br /><span class="hero-title-line">하루의 모든 순간을 특별하게</span></h1>
@@ -140,5 +150,49 @@
       </section>
     </main>
     <script src="astra-language.js"></script>
+    <script>
+      (() => {
+        const hero = document.querySelector(".home-hero");
+        const galleryImages = [...document.querySelectorAll(".hero-hover-gallery img")];
+        const cursor = document.querySelector(".hero-hover-cursor");
+
+        if (!hero || !galleryImages.length || !cursor) return;
+
+        let activeIndex = 0;
+
+        const setActiveImage = (index) => {
+          if (index === activeIndex) return;
+          galleryImages[activeIndex].classList.remove("is-active");
+          galleryImages[index].classList.add("is-active");
+          activeIndex = index;
+        };
+
+        const updateHeroGallery = (event) => {
+          if (event.pointerType === "touch") return;
+
+          const rect = hero.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          const progress = Math.min(0.999, Math.max(0, x / rect.width));
+          const nextIndex = Math.floor(progress * galleryImages.length);
+
+          hero.style.setProperty("--hero-cursor-x", `${x}px`);
+          hero.style.setProperty("--hero-cursor-y", `${y}px`);
+          setActiveImage(nextIndex);
+        };
+
+        hero.addEventListener("pointerenter", (event) => {
+          if (event.pointerType === "touch") return;
+          hero.classList.add("is-hovering");
+          updateHeroGallery(event);
+        });
+
+        hero.addEventListener("pointermove", updateHeroGallery);
+
+        hero.addEventListener("pointerleave", () => {
+          hero.classList.remove("is-hovering");
+        });
+      })();
+    </script>
   </body>
 </html>
