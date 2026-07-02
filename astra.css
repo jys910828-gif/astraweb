@@ -458,7 +458,7 @@ section {
 .story-visual {
   background:
     linear-gradient(90deg, rgba(34, 27, 23, 0.76), rgba(34, 27, 23, 0.18)),
-    url("인테리어사진/IMG_3855.jpeg") center 48% / cover;
+    url("인테리어사진/2.jpeg") center 48% / cover;
 }
 
 .story-visual .section-title p {
@@ -532,7 +532,7 @@ section {
 }
 
 .story-details article:nth-child(1)::before {
-  background-image: url("인테리어사진/내부사진.png");
+  background-image: url("인테리어사진/3.jpeg");
 }
 
 .story-details article:nth-child(2)::before {
@@ -779,7 +779,7 @@ section {
   color: var(--white);
   background:
     linear-gradient(90deg, rgba(34, 27, 23, 0.8), rgba(34, 27, 23, 0.16)),
-    url("인테리어사진/내부사진.png") center / cover;
+    url("인테리어사진/3.jpeg") center / cover;
 }
 
 .reservation-hero .section-title p {
@@ -1805,7 +1805,7 @@ body {
   background:
     linear-gradient(180deg, rgba(19, 13, 9, 0.62) 0%, rgba(19, 13, 9, 0.26) 42%, rgba(19, 13, 9, 0.64) 100%),
     linear-gradient(90deg, rgba(31, 22, 16, 0.38), rgba(31, 22, 16, 0.08) 48%, rgba(31, 22, 16, 0.32)),
-    url("인테리어사진/매장홀사진.JPG") center 42% / cover;
+    url("인테리어사진/5.JPG") center 42% / cover;
 }
 
 .reservation-hero .reservation-title-one-line {
@@ -2225,7 +2225,7 @@ body {
     background:
       linear-gradient(180deg, rgba(19, 13, 9, 0.68) 0%, rgba(19, 13, 9, 0.34) 44%, rgba(19, 13, 9, 0.7) 100%),
       linear-gradient(90deg, rgba(31, 22, 16, 0.28), rgba(31, 22, 16, 0.08) 48%, rgba(31, 22, 16, 0.28)),
-      url("인테리어사진/매장홀사진.JPG") center 40% / cover;
+      url("인테리어사진/5.JPG") center 40% / cover;
   }
 
   .home-hero .hero-panel {
@@ -2261,7 +2261,7 @@ body {
     background:
       linear-gradient(180deg, rgba(19, 13, 9, 0.74) 0%, rgba(19, 13, 9, 0.4) 42%, rgba(19, 13, 9, 0.78) 100%),
       linear-gradient(90deg, rgba(31, 22, 16, 0.34), rgba(31, 22, 16, 0.08) 48%, rgba(31, 22, 16, 0.34)),
-      url("인테리어사진/매장홀사진.JPG") 52% 38% / cover;
+      url("인테리어사진/5.JPG") 52% 38% / cover;
   }
 
   .home-hero .hero-panel {
