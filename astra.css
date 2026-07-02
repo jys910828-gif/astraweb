@@ -384,7 +384,7 @@ section {
 
 .home-team-grid article,
 .team-board article {
-  padding: clamp(36px, 5vw, 68px) clamp(22px, 3vw, 46px);
+  padding: clamp(30px, 4vw, 54px) clamp(20px, 2.6vw, 40px);
   background: var(--white);
 }
 
@@ -678,9 +678,9 @@ section {
 }
 
 .profile-photo {
-  width: 100%;
+  width: min(300px, 72vw);
   aspect-ratio: 9 / 16;
-  margin: 0 auto 38px;
+  margin: 0 auto 30px;
   overflow: hidden;
   background: var(--cream);
 }
