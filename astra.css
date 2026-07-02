@@ -1212,14 +1212,17 @@ section {
 .interior-carousel-controls p {
   margin: 0;
   color: var(--muted);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 18px;
-  letter-spacing: 0.08em;
+  font-family: "Pretendard", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
 }
 
 .interior-carousel-controls p span:first-child {
   color: var(--orange);
-  font-size: 28px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .interior-carousel-controls > div {
