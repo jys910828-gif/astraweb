@@ -85,29 +85,68 @@
         const viewport = carousel.querySelector(".interior-carousel-viewport");
         const track = carousel.querySelector(".interior-carousel-track");
         const slides = [...track.querySelectorAll("figure")];
-        const previewClone = slides[0].cloneNode(true);
-        previewClone.classList.add("is-clone");
-        previewClone.setAttribute("aria-hidden", "true");
-        track.append(previewClone);
         const current = carousel.querySelector("[data-carousel-current]");
         carousel.querySelector("[data-carousel-total]").textContent = String(slides.length).padStart(2, "0");
         let index = 0;
         let pointerStart = 0;
+        let pointerCurrent = 0;
+        let isSwiping = false;
+        let isAnimating = false;
+        let animationFrame = null;
+
+        const duration = 360;
+
+        const orderedSlides = () => [...track.querySelectorAll("figure")];
 
         const render = () => {
-          slides.forEach((slide, slideIndex) => {
-            slide.classList.toggle("is-active", slideIndex === index);
-            slide.classList.toggle("is-next", slideIndex === (index + 1) % slides.length);
-            slide.setAttribute("aria-hidden", slideIndex === index ? "false" : "true");
+          orderedSlides().forEach((slide, slideIndex) => {
+            slide.style.setProperty("--i", String(slideIndex + 1));
+            slide.style.zIndex = String(slides.length - slideIndex);
+            slide.style.setProperty("--swipe-x", "0px");
+            slide.style.setProperty("--swipe-rotate", "0deg");
+            slide.classList.toggle("is-active", slideIndex === 0);
+            slide.classList.toggle("is-next", slideIndex === 1);
+            slide.setAttribute("aria-hidden", slideIndex === 0 ? "false" : "true");
           });
-          previewClone.classList.toggle("is-next", index === slides.length - 1);
-          track.style.transform = `translateX(${-slides[index].offsetLeft}px)`;
           current.textContent = String(index + 1).padStart(2, "0");
         };
 
-        const move = (step) => {
-          index = (index + step + slides.length) % slides.length;
-          render();
+        const activeSlide = () => orderedSlides()[0];
+
+        const applySwipe = (distance) => {
+          const active = activeSlide();
+          if (!active) return;
+          active.style.setProperty("--swipe-x", `${distance}px`);
+          active.style.setProperty("--swipe-rotate", `${distance * 0.08}deg`);
+          active.style.opacity = String(1 - Math.min(Math.abs(distance) / 220, 1) * 0.72);
+        };
+
+        const move = (step = 1) => {
+          if (isAnimating) return;
+          const active = activeSlide();
+          if (!active) return;
+
+          isAnimating = true;
+          const direction = step > 0 ? -1 : 1;
+          active.style.transition = `transform ${duration}ms ease, opacity ${duration}ms ease`;
+          active.style.setProperty("--swipe-x", `${direction * 360}px`);
+          active.style.setProperty("--swipe-rotate", `${direction * 20}deg`);
+          active.style.opacity = "0";
+
+          window.setTimeout(() => {
+            if (step > 0) {
+              track.append(active);
+              index = (index + 1) % slides.length;
+            } else {
+              const last = orderedSlides().at(-1);
+              if (last) track.prepend(last);
+              index = (index - 1 + slides.length) % slides.length;
+            }
+            active.style.transition = "";
+            active.style.opacity = "";
+            isAnimating = false;
+            render();
+          }, duration);
         };
 
         carousel.querySelector("[data-carousel-prev]").addEventListener("click", () => move(-1));
@@ -116,12 +155,45 @@
           if (event.key === "ArrowLeft") move(-1);
           if (event.key === "ArrowRight") move(1);
         });
-        viewport.addEventListener("pointerdown", (event) => { pointerStart = event.clientX; });
-        viewport.addEventListener("pointerup", (event) => {
-          const distance = event.clientX - pointerStart;
-          if (Math.abs(distance) > 45) move(distance > 0 ? -1 : 1);
+
+        viewport.addEventListener("pointerdown", (event) => {
+          if (isAnimating) return;
+          isSwiping = true;
+          pointerStart = event.clientX;
+          pointerCurrent = event.clientX;
+          viewport.setPointerCapture?.(event.pointerId);
+          const active = activeSlide();
+          if (active) active.style.transition = "none";
         });
-        window.addEventListener("resize", render);
+
+        viewport.addEventListener("pointermove", (event) => {
+          if (!isSwiping) return;
+          if (animationFrame) cancelAnimationFrame(animationFrame);
+          animationFrame = requestAnimationFrame(() => {
+            pointerCurrent = event.clientX;
+            const distance = pointerCurrent - pointerStart;
+            applySwipe(distance);
+          });
+        });
+
+        viewport.addEventListener("pointerup", (event) => {
+          if (!isSwiping) return;
+          if (animationFrame) cancelAnimationFrame(animationFrame);
+          const distance = event.clientX - pointerStart;
+          const active = activeSlide();
+          if (active) active.style.transition = "";
+          isSwiping = false;
+          viewport.releasePointerCapture?.(event.pointerId);
+
+          if (Math.abs(distance) > 50) move(distance < 0 ? 1 : -1);
+          else applySwipe(0);
+        });
+
+        viewport.addEventListener("pointercancel", () => {
+          isSwiping = false;
+          applySwipe(0);
+        });
+
         render();
       })();
     </script>

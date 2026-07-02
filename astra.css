@@ -1248,9 +1248,12 @@ section {
 
 .interior-carousel-viewport {
   overflow: hidden;
+  display: grid;
+  place-items: center;
+  min-height: clamp(430px, 52vw, 760px);
   padding: 0 clamp(24px, 6vw, 96px);
   cursor: grab;
-  touch-action: pan-y;
+  touch-action: none;
   outline: none;
 }
 
@@ -1265,36 +1268,50 @@ section {
 
 .interior-carousel-track {
   position: relative;
-  display: flex;
-  gap: clamp(14px, 2vw, 30px);
-  width: max-content;
-  transition: transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
+  width: min(76vw, 1040px);
+  height: clamp(380px, 48vw, 680px);
+  transform-style: preserve-3d;
+  --card-perspective: 900px;
+  --card-z-offset: 18px;
+  --card-y-offset: 12px;
+  --card-x-offset: 8px;
+  --card-swap-duration: 360ms;
 }
 
 .interior-carousel-track figure {
-  flex: 0 0 min(74vw, 1320px);
-  height: clamp(380px, 48vw, 740px);
+  position: absolute;
+  inset: 0;
   margin: 0;
   overflow: hidden;
-  opacity: 0.16;
-  transform: scale(0.965);
-  transform-origin: left center;
-  transition: opacity 520ms ease, transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid rgba(201, 170, 112, 0.36);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(40, 33, 29, 0.16);
+  opacity: calc(1 - ((var(--i, 1) - 1) * 0.18));
+  transform:
+    perspective(var(--card-perspective))
+    translateZ(calc(-1 * var(--card-z-offset) * (var(--i, 1) - 1)))
+    translateY(calc(var(--card-y-offset) * (var(--i, 1) - 1)))
+    translateX(calc(var(--card-x-offset) * (var(--i, 1) - 1) + var(--swipe-x, 0px)))
+    rotateY(var(--swipe-rotate, 0deg))
+    scale(calc(1 - ((var(--i, 1) - 1) * 0.035)));
+  transform-origin: center;
+  transition: opacity var(--card-swap-duration) ease, transform var(--card-swap-duration) ease;
+  will-change: transform, opacity;
 }
 
 .interior-carousel-track figure.is-active {
   opacity: 1;
-  transform: scale(1);
+  cursor: grab;
 }
 
 .interior-carousel-track figure.is-next {
-  opacity: 0.42;
+  opacity: 0.66;
 }
 
 .interior-carousel-track img {
   pointer-events: none;
   user-select: none;
+  border-radius: inherit;
 }
 
 @media (max-width: 620px) {
@@ -1308,8 +1325,12 @@ section {
   }
 
   .interior-carousel-track figure {
-    flex-basis: 78vw;
-    height: clamp(280px, 74vw, 390px);
+    border-radius: 16px;
+  }
+
+  .interior-carousel-track {
+    width: min(84vw, 420px);
+    height: clamp(320px, 76vw, 440px);
   }
 }
 
